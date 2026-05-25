@@ -8,6 +8,34 @@ package Dispositivo;
  *
  * @author magal
  */
-public class AireAcondicionado {
+public class AireAcondicionado extends Dispositivo{
+    private double temperatura;
+
+    public AireAcondicionado(String nombre, String id, double consumoEnergia) {
+        super(nombre, id, consumoEnergia);
+        this.temperatura = 24.0; //ideal 
+    }
+
+    public void setTemperatura(double temperatura) {
+        this.temperatura = temperatura;
+    }
+    
+    @Override 
+     public double obtenerConsumoActual(){
+         if(!encendido){return 0.0;} 
+         if(temperatura <20){
+             return consumoEnergia*1.5; //gasta mas para enfriar
+         }
+         if(temperatura>24){
+             return consumoEnergia*0.8; //gasta menos, ahorra energia
+         }
+         else{return consumoEnergia;}
+     }
+    @Override 
+    public void ejecutarAccion(){
+        System.out.println(getNombre( )+ "cambiando a"+ temperatura +"°C.");
+        
+    }
+    
     
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/proyecto/Proyecto.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Dispositivo/Dispositivo.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Dispositivo/Luz.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Dispositivo/AireAcondicionado.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Dispositivo/Alarma.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Dispositivo/Ventana.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Interfaces/Activable.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Sensores/Sensor.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Sensores/SensorMovimiento.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Sensores/SensorTemperatura.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Sensores/SensorHumo.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Sensores/SensorHumedad.java</file>
+            <file>file:/C:/Users/magal/OneDrive/Documentos/NetBeansProjects/Proyecto/src/Interfaces/ConsumoEnergia.java</file>
+        </group>
+    </open-files>
+</project-private>

@@ -8,6 +8,6 @@ package Sensores;
  *
  * @author magal
  */
-public class SensorHumedad {
+public class SensorHumedad extends Sensor{
     
 }

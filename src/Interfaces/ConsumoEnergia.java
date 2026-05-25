@@ -10,11 +10,7 @@ import java.io.Serializable;
  *
  * @author magal
  */
-public interface Activable extends Serializable{
-    public void encender();
-     
-    public void apagar();
-    
-    boolean estaEncendido();
+public interface ConsumoEnergia extends Serializable{
+    double obtenerConsumoActual();
     
 }

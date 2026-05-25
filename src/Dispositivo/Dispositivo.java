@@ -4,13 +4,26 @@
  */
 package Dispositivo;
 
+import Interfaces.Activable;
+
 /**
  *
  * @author magal
  */
-public class Dispositivo {
+public abstract class Dispositivo implements Activable{
     protected String nombre;
+    protected String id;
     protected boolean estado;
     protected double consumoEnergia;
-    protected String ubicacion;
+
+    public Dispositivo(String nombre, String id, boolean estado, double consumoEnergia) {
+        this.nombre = nombre;
+        this.id = id;
+        this.estado = estado;
+        this.consumoEnergia = consumoEnergia;
+    }
+    
+    
+    
 }
+//

@@ -4,10 +4,33 @@
  */
 package Sensores;
 
+import Casa.Habitacion;
+import Dispositivo.AireAcondicionado;
+import Dispositivo.Dispositivo;
+
+
 /**
  *
  * @author magal
  */
 public class SensorTemperatura extends Sensor{
+
+    public SensorTemperatura(String nombre, String id) {
+        super(nombre, id);
+    }
+
+    @Override
+    public void evaluar(Habitacion habitacion) {
+        if(this.isEstadoAlerta()){
+        for (Dispositivo d : habitacion.getDispositivos()){
+                if(d instanceof AireAcondicionado){
+                    ((AireAcondicionado)d).encender();
+                
+            }
+        }
+    }
+    }
+
+
     
 }

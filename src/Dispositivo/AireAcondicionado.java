@@ -4,11 +4,13 @@
  */
 package Dispositivo;
 
+import Interfaces.ConsumoEnergia;
+
 /**
  *
  * @author magal
  */
-public class AireAcondicionado extends Dispositivo{
+public class AireAcondicionado extends Dispositivo implements ConsumoEnergia{
     private double temperatura;
 
     public AireAcondicionado(String nombre, String id, double consumoEnergia) {
@@ -22,7 +24,7 @@ public class AireAcondicionado extends Dispositivo{
     
     @Override 
      public double obtenerConsumoActual(){
-         if(!encendido){return 0.0;} 
+         if(!estado){return 0.0;} 
          if(temperatura <20){
              return consumoEnergia*1.5; //gasta mas para enfriar
          }

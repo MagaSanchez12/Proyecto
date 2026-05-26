@@ -10,7 +10,7 @@ package Dispositivo;
  */
 public class Ventana extends Dispositivo{
 
-    public Ventana(boolean abierta, String nombre, String id, double consumoEnergia) {
+    public Ventana(String nombre, String id, double consumoEnergia) {
         super(nombre, id, consumoEnergia);
     }
     public void abrir(){

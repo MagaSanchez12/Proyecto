@@ -9,5 +9,11 @@ package Sensores;
  * @author magal
  */
 public class SensorMovimiento extends Sensor {
+
+    public SensorMovimiento(String nombre, String id) {
+        super(nombre, id);
+    }
+   
+    }
     
-}
+

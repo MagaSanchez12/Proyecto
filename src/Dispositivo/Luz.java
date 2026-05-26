@@ -4,11 +4,13 @@
  */
 package Dispositivo;
 
+import Interfaces.ConsumoEnergia;
+
 /**
  *
  * @author magal
  */
-public class Luz extends Dispositivo{
+public class Luz extends Dispositivo implements ConsumoEnergia{
     private int intensidad;//0-100
 
     public Luz(String nombre, String id, double consumoEnergia) {
@@ -21,7 +23,7 @@ public class Luz extends Dispositivo{
     }
     @Override
      public double obtenerConsumoActual(){
-         if(!encendido){return 0.0;}
+         if(!estado){return 0.0;}
          return this.consumoEnergia*(intensidad/100.0);    
      } 
      @Override

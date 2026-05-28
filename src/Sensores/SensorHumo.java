@@ -24,18 +24,34 @@ public class SensorHumo extends Sensor{
     @Override
     public void evaluar(Habitacion habitacion) {
         if (this.isEstadoAlerta()){
-            System.out.println("PELIGRO DE INCENDIO: Detectado por"+ getNombre()+ "en"+ habitacion.getNombre());
+            boolean primeraActivacion = false;
             for (Dispositivo d : habitacion.getDispositivos()){
                 if(d instanceof Alarma){
-                    ((Alarma)d).activarAlarma();
+                    if (!d.estaEncendido()) {
+                    d.encender();
+                    d.ejecutarAccion();
+                    primeraActivacion = true;
                 }
-                if(d instanceof Ventana){
-                    ((Ventana)d).abrir(); //para que salga el humo y la gente no se ahogue (?
-                
             }
+                if(d instanceof Ventana){
+                    if (!d.estaEncendido()) { 
+                    d.encender(); 
+                    d.ejecutarAccion();   
+                }
             }
         }
         
+        if (primeraActivacion) {
+            System.out.println("ALERTA: Peligro de incendio detectado por " + getNombre() + " en " + habitacion.getNombre() + "!");
+        }
+        
+    } else {
+        for (Dispositivo d : habitacion.getDispositivos()) {
+            if ((d instanceof Alarma || d instanceof Ventana) && d.estaEncendido()) {
+                d.apagar();
+                d.ejecutarAccion(); 
+            }
+        }
     }
-    
+}
 }

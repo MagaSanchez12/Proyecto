@@ -10,8 +10,8 @@ package Dispositivo;
  */
 public class Ventana extends Dispositivo{
 
-    public Ventana(String nombre, String id, double consumoEnergia) {
-        super(nombre, id, consumoEnergia);
+    public Ventana(String nombre, String id) {
+        super(nombre, id, 0.0); //no consume energy
     }
     public void abrir(){
         this.estado= true;
@@ -36,9 +36,13 @@ public class Ventana extends Dispositivo{
     
     @Override 
     public void ejecutarAccion(){
-        if(this.estado){ // si esta abierta (true) se cierra
-            cerrar();
-        }else{ abrir();} // si esta cerrada (false) se abre
+        if(this.estado){ 
+            abrir();
+            System.out.println("Abriendo ventana"+ getNombre());
+        }else{ cerrar(); 
+            System.out.println("Cerrando ventana"+ getNombre());
+        }
+
     }
     
     

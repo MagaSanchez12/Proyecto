@@ -13,10 +13,15 @@ import Interfaces.ConsumoEnergia;
 public class Luz extends Dispositivo implements ConsumoEnergia{
     private int intensidad;//0-100
 
-    public Luz(String nombre, String id, double consumoEnergia) {
-        super(nombre, id, consumoEnergia);
+    public Luz(String nombre, String id) {
+        super(nombre, id, 0.05); //consumo de fabrica 0.05kWh
         this.intensidad = 100;
     }
+
+    public int getIntensidad() {
+        return intensidad;
+    }
+    
 
     public void setIntensidad(int intensidad) {
         this.intensidad = intensidad;
@@ -24,7 +29,7 @@ public class Luz extends Dispositivo implements ConsumoEnergia{
     @Override
      public double obtenerConsumoActual(){
          if(!estado){return 0.0;}
-         return this.consumoEnergia*(intensidad/100.0);    
+         return this.consumoEnergia*(this.intensidad/100.0);    
      } 
      @Override
      public void ejecutarAccion(){

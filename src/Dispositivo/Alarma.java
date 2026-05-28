@@ -10,8 +10,8 @@ package Dispositivo;
  */
 public class Alarma extends Dispositivo{
 
-    public Alarma(String nombre, String id, double consumoEnergia) {
-        super(nombre, id, consumoEnergia);
+    public Alarma(String nombre, String id) {
+        super(nombre, id, 0.0);//no consume energy
     }
     
     public void activarAlarma(){
@@ -34,9 +34,9 @@ public class Alarma extends Dispositivo{
     
     @Override 
     public void ejecutarAccion(){
-        if(this.estado){ 
-            desactivarAlarma();
-        }else{ activarAlarma();} 
+        if(this.estaEncendido()){ 
+            activarAlarma();
+        }else{ desactivarAlarma();} 
     }
     
 }

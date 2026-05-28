@@ -43,4 +43,3 @@ public abstract class Dispositivo implements Activable{
     public abstract void ejecutarAccion();
     
 }
-//

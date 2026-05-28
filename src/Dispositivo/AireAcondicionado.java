@@ -13,10 +13,15 @@ import Interfaces.ConsumoEnergia;
 public class AireAcondicionado extends Dispositivo implements ConsumoEnergia{
     private double temperatura;
 
-    public AireAcondicionado(String nombre, String id, double consumoEnergia) {
-        super(nombre, id, consumoEnergia);
+    public AireAcondicionado(String nombre, String id) {
+        super(nombre, id, 1.5); //consumo de fabrrica 1.5kWh
         this.temperatura = 24.0; //ideal 
     }
+
+    public double getTemperatura() {
+        return temperatura;
+    }
+    
 
     public void setTemperatura(double temperatura) {
         this.temperatura = temperatura;
@@ -25,10 +30,10 @@ public class AireAcondicionado extends Dispositivo implements ConsumoEnergia{
     @Override 
      public double obtenerConsumoActual(){
          if(!estado){return 0.0;} 
-         if(temperatura <20){
+         if(this.temperatura <20){
              return consumoEnergia*1.5; //gasta mas para enfriar
          }
-         if(temperatura>24){
+         if(this.temperatura>24){
              return consumoEnergia*0.8; //gasta menos, ahorra energia
          }
          else{return consumoEnergia;}

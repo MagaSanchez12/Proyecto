@@ -1,4 +1,4 @@
-# 🏠 Sistema de Control Domótico - Panel de Control
+# 🏠 Casa Inteligente - Sistema de Control Domótico
 
 ## 📝 1. Descripción del Problema Abordado
 

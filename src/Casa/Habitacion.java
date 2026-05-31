@@ -5,8 +5,8 @@
 package Casa;
 
 import Dispositivo.Dispositivo;
+import InterfazGrafica.VentanaPrincipal;
 import Sensores.Sensor;
-import Sensores.SensorHumo;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,22 +50,7 @@ public class Habitacion implements Serializable{
         this.hora = hora;}
     }
     
-    public void ejecutarAutomatizaciones(){
-        if (this.sensores.isEmpty()) {
-        System.out.println( this.nombre + " no tiene sensores instalados.");
-        return; 
-        } 
-        boolean seEjecutoAlgo = false;
-        for (Sensor s : this.sensores) {
-            s.evaluar(this);
-            seEjecutoAlgo = true;
-        }
-
-        if (seEjecutoAlgo) {
-            System.out.println(" Automatizaciones ejecutadas con exito en " + this.nombre);
-        }
-    }
-    
+  
         public void agregarDispositivo(Dispositivo d) { 
             this.dispositivos.add(d); 
         }

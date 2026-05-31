@@ -5,6 +5,7 @@
 package Dispositivo;
 
 import Interfaces.ConsumoEnergia;
+import InterfazGrafica.VentanaPrincipal;
 
 /**
  *
@@ -33,7 +34,7 @@ public class Luz extends Dispositivo implements ConsumoEnergia{
      } 
      @Override
      public void ejecutarAccion(){
-         System.out.println(getNombre()+ "regulada al"+ intensidad + "% de intensidad");
+         VentanaPrincipal.instanciaGlobal.registrarEnHistorial(getNombre()+ " regulada al "+ intensidad + "% de intensidad");
      }
      
    

@@ -35,10 +35,10 @@ public abstract class Dispositivo implements Activable{
     public boolean estaEncendido(){return this.estado;}
 
     @Override
-    public void apagar(){this.estado= true;}
+    public void apagar(){this.estado= false;}
 
     @Override
-    public void encender(){this.estado=false;}  
+    public void encender(){this.estado=true;}  
     
     public abstract void ejecutarAccion();
     

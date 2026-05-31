@@ -15,9 +15,17 @@ import java.util.List;
 public class Vivienda implements Serializable{
     
     private List<Habitacion> habitaciones;
+    private String historialAcumulado = "";
     
     public Vivienda(){
         this.habitaciones=new ArrayList<>();
+    }
+    public String getHistorialAcumulado() {
+        return this.historialAcumulado;
+    }
+    
+    public void setHistorialAcumulado(String historialAcumulado) {
+        this.historialAcumulado = historialAcumulado;
     }
 
     public List<Habitacion> getHabitaciones() {

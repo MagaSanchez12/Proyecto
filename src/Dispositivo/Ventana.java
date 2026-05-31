@@ -38,9 +38,9 @@ public class Ventana extends Dispositivo{
     public void ejecutarAccion(){
         if(this.estado){ 
             abrir();
-            System.out.println("Abriendo ventana"+ getNombre());
+            System.out.println("Abriendo ventana "+ getNombre());
         }else{ cerrar(); 
-            System.out.println("Cerrando ventana"+ getNombre());
+            System.out.println("Cerrando ventana "+ getNombre());
         }
 
     }

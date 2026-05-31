@@ -7,6 +7,7 @@ package Sensores;
 import Casa.Habitacion;
 import Dispositivo.AireAcondicionado;
 import Dispositivo.Dispositivo;
+import InterfazGrafica.VentanaPrincipal;
 
 
 /**
@@ -32,14 +33,15 @@ public class SensorTemperatura extends Sensor{
     @Override
     public void evaluar(Habitacion habitacion) {
     if (this.tempAmbiente > 28.0) {
-        System.out.println("Sensor '" + getNombre() + "' detectó calor de " + tempAmbiente + "°C.");
-        
         for (Dispositivo d : habitacion.getDispositivos()) {
             if (d instanceof AireAcondicionado) {   
-                if (!((AireAcondicionado) d).estaEncendido() || ((AireAcondicionado) d).getTemperatura() != 18.0)
+                if (!((AireAcondicionado) d).estaEncendido() || ((AireAcondicionado) d).getTemperatura() != 23.0){
                 d.encender();                 
                 ((AireAcondicionado) d).setTemperatura(23.0);                
                 d.ejecutarAccion(); 
+                VentanaPrincipal.instanciaGlobal.registrarEnHistorial("Sensor '" + getNombre() + "' detectó calor de " + tempAmbiente + "°C. Prendiendo aire acondicionado en 23°C.");
+                }
+
             }
         }
     }
@@ -47,7 +49,7 @@ public class SensorTemperatura extends Sensor{
         for (Dispositivo d : habitacion.getDispositivos()) {
             if (d instanceof AireAcondicionado && d.estaEncendido()) {
                 d.apagar();
-                System.out.println("Clima agradable en " + habitacion.getNombre() + ". Apagando aire acondicionado.");
+                VentanaPrincipal.instanciaGlobal.registrarEnHistorial("Clima agradable en " + habitacion.getNombre() + ". Apagando aire acondicionado.");
             }
         }
     }

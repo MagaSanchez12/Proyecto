@@ -5,10 +5,11 @@
 package main;
 
 import Casa.*;
-import Dispositivo.*;
+import InterfazGrafica.VentanaPrincipal;
+/*import Dispositivo.*;
 import Interfaces.ConsumoEnergia;
 import Sensores.*;
-import java.util.Scanner;
+import java.util.Scanner;*/
 
 /**
  *
@@ -20,10 +21,13 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner teclado= new Scanner(System.in);
         
         Vivienda casita= Archivo.cargarCasa();
+        // Le pasamos "casita" entre los paréntesis al crear la ventana
+        VentanaPrincipal ventana = new VentanaPrincipal(casita); 
+        ventana.setVisible(true);
         
+        /*Scanner teclado= new Scanner(System.in);
         int opcion = 0;
         do {
             System.out.println("===  PANEL DE CONTROL  ===");
@@ -166,7 +170,7 @@ public class Main {
                     }
                     int idxH = teclado.nextInt();
                     if (idxH < 0 || idxH >= casita.getHabitaciones().size()) {
-                        System.out.println("Selección invalida.");
+                        System.out.println("Seleccion invalida.");
                         break;
                     }
                     Habitacion habEvento = casita.getHabitaciones().get(idxH);
@@ -252,7 +256,7 @@ public class Main {
                     System.out.println("Opcion invalida.");
             }
         } while (opcion != 7);
-        teclado.close();    
+        teclado.close();    */
     }
 }
     
